@@ -1,4 +1,4 @@
 package lesson2Homework;
 
-public class FFFF {
+public class GGG {
 }
