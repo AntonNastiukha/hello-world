@@ -3,25 +3,20 @@ package lesson3Homework.books;
 import java.util.Objects;
 
 public class FictionBooks extends Book {
-    private int price;
+    private Genre genre;
 
-    public FictionBooks(int yearOfPublication, String autor, String title, int price) {
-        super(yearOfPublication, autor, title);
-        this.price = price;
+    public FictionBooks(int yearOfPublication, String autor, String title, boolean isAvailable, Genre genre) {
+        super(yearOfPublication, autor, title, isAvailable);
+        this.genre = genre;
     }
 
-    public FictionBooks(int price) {
-        this.price = price;
+    public Genre getGenre() {
+        return genre;
     }
 
-    public int getPrice() {
-        return price;
+    public void setGenre(Genre genre) {
+        this.genre = genre;
     }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
 
     @Override
     public boolean equals(Object o) {
@@ -29,18 +24,18 @@ public class FictionBooks extends Book {
         if (!(o instanceof FictionBooks)) return false;
         if (!super.equals(o)) return false;
         FictionBooks that = (FictionBooks) o;
-        return getPrice() == that.getPrice();
+        return getGenre() == that.getGenre();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), getPrice());
+        return Objects.hash(super.hashCode(), getGenre());
     }
 
     @Override
     public String toString() {
         return "FictionBooks{" +
-                "price=" + price +
+                "genre=" + genre +
                 "} " + super.toString();
     }
 }

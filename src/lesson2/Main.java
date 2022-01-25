@@ -1,5 +1,7 @@
 package lesson2;
 
+import lesson2Homework.WeekDays;
+
 public class Main {
     public static void main(String[] args) {
 //        MyMind myMind = new MyMind(JavaLanguage.JAVA);
@@ -10,6 +12,7 @@ public class Main {
 //        System.out.println(myMind.getJavaLanguage().getClime());
         int num1 = 10;
         int num2 = 2;
+
 
         Operator operator = Operator.DIVIDE;
         int result = operator.execute(num1,num2);

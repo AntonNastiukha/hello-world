@@ -5,12 +5,9 @@ import java.util.Objects;
 public class scientificBook extends Book {
     private Subjects subject;
 
-    public scientificBook(int yearOfPublication, String autor, String title, Subjects subject) {
-        super(yearOfPublication, autor, title);
-        this.subject = subject;
-    }
 
-    public scientificBook(Subjects subject) {
+    public scientificBook(int yearOfPublication, String autor, String title, boolean isAvailable, Subjects subject) {
+        super(yearOfPublication, autor, title, isAvailable);
         this.subject = subject;
     }
 
