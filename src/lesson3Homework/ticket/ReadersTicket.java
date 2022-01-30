@@ -1,18 +1,25 @@
 package lesson3Homework.ticket;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 public class ReadersTicket {
     private int id;
     private University university;
-    private int validUntilYear;
+    private LocalDate date;
 
-    public ReadersTicket(University university, int validUntilYear) {
+    public ReadersTicket(int id, University university, LocalDate date) {
+        this.id = id;
         this.university = university;
-        this.validUntilYear = validUntilYear;
+        this.date = date;
     }
 
-    public ReadersTicket() {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public University getUniversity() {
@@ -23,33 +30,37 @@ public class ReadersTicket {
         this.university = university;
     }
 
-    public int getValidUntilYear() {
-        return validUntilYear;
+    public LocalDate getDate() {
+        return date;
     }
 
-    public void setValidUntilYear(int validUntilYear) {
-        this.validUntilYear = validUntilYear;
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof ReadersTicket)) return false;
-        ReadersTicket that = (ReadersTicket) o;
-        return getValidUntilYear() == that.getValidUntilYear() &&
-                getUniversity() == that.getUniversity();
+        ReadersTicket ticket = (ReadersTicket) o;
+        return getId() == ticket.getId() &&
+                getUniversity() == ticket.getUniversity() &&
+                Objects.equals(getDate(), ticket.getDate());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getUniversity(), getValidUntilYear());
+        return Objects.hash(getId(), getUniversity(), getDate());
     }
 
     @Override
     public String toString() {
         return "ReadersTicket{" +
-                "university=" + university +
-                ", validUntilYear=" + validUntilYear +
+                "id=" + id +
+                ", university=" + university +
+                ", date=" + date +
                 '}';
     }
 }
+
+
